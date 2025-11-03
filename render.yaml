@@ -3,8 +3,10 @@ services:
     name: car-rental-frontend
     repo: https://github.com/<your-github-username>/CAR-RENTAL-APP
     branch: main
-    root: frontend
-    publish_root: .
+    # Run build from the repository root so the build script path resolves correctly
+    root: .
+    # publish the frontend folder after build
+    publish_root: frontend
     build_command: node render/write-env.js
     env:
       # Replace with the public API URL of your backend service. This value is public

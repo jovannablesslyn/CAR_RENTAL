@@ -323,10 +323,13 @@
         </form>
       </div>
     </div>
-  </div>
-</div>
-<script>
-const backendUrl = 'http://localhost:3000';
+    </div>
+    </div>
+    <!-- runtime env injected by Render build: frontend/env.js -->
+    <script src="/env.js"></script>
+    <script>
+    // use API_URL from window.__ENV when available (written by render/write-env.js at build time)
+    const backendUrl = (window.__ENV && window.__ENV.API_URL) || 'http://localhost:3000';
 let activeUsername = "Admin";
 
 function openProfileModal() {
